@@ -53,6 +53,9 @@ Safety boundary:
 | `IDENTITY_UPLOAD_MVP_REVIEW_PACKAGE.md` | P0-G5B.6 owner/CTO preview review package for `/account/identity` MVP |
 | `P0_G5B7_READDY_HANDOFF_PACKAGE.md` | P0-G5B.7 Readdy handoff package with GitHub canonical links and porting boundaries |
 | `READDY_IDENTITY_UPLOAD_MVP_PROMPT.md` | Paste-ready Readdy prompt for customer identity upload MVP only |
+| `IDENTITY_REUPLOAD_LOGIC_DESIGN.md` | P0-G5B.8 identity re-upload/update state logic, transitions, backend/admin impact |
+| `IDENTITY_REUPLOAD_UI_COPY.md` | P0-G5B.8 customer-facing copy contract for missing/fallback/pending/verified/rejected re-upload states |
+| `READDY_VER1142_IDENTITY_UX_POLISH_PROMPT.md` | Paste-ready Readdy prompt for Ver1142 UI-only re-upload/update polish |
 | `IDENTITY_COMPLETION_FLOW_AUDIT.md` | P0-F1 customer identity completion flow audit |
 | `ADMIN_ORDER_SAFETY_AUDIT.md` | P0-F2 admin order safety audit |
 | `NOTIFICATION_EVENT_DESIGN.md` | P0-F3 notification events, idempotency, fallback, feature flags |
