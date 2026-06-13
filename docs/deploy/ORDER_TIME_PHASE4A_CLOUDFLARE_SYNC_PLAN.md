@@ -70,9 +70,10 @@ Recommended flow:
    - no direct core order pricing mutation.
 7. Run frontend build from GitHub canonical branch.
 8. Deploy Cloudflare Pages preview only.
-9. Run staging preview smoke.
-10. Owner reviews Cloudflare preview.
-11. Only after explicit owner approval, merge/release to main/production.
+9. Codex verifies Cloudflare preview environment targets Supabase Branch `ydubnjompnybshscosfd`.
+10. Run staging preview smoke.
+11. Owner reviews Cloudflare preview.
+12. Only after explicit owner approval, merge/release to main/production.
 
 ## Cloudflare Pages Preview Strategy
 
@@ -81,7 +82,7 @@ Cloudflare Pages should deploy only from the GitHub canonical branch.
 Preview deploy requirements:
 
 - Build command and output directory match the canonical repo.
-- Environment variables point to Staging Supabase branch for preview testing.
+- Environment variables point to Staging Supabase branch for preview testing; this is verified by Codex, not Readdy.
 - No production Supabase DB writes are part of preview validation.
 - Preview URL is recorded in the release report.
 - Production custom domain remains unchanged.

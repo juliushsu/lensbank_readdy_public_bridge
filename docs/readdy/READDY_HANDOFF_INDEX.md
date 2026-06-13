@@ -35,6 +35,12 @@ Allowed UI sandbox work:
 - Add read-only payable summary display in `/admin/orders/:id`.
 - Call `admin-get-order-payable-summary` for final payable display.
 
+Runtime target boundary:
+
+- Readdy is not required to switch to or verify Supabase Branch `ydubnjompnybshscosfd`.
+- Current Readdy connection appears limited to the main Supabase project (`reczunexoejndosqzjal`).
+- Codex Runtime Validation owns Staging branch verification after Readdy exports the UI.
+
 ## C. Prohibited Scope
 
 Readdy must not:
@@ -70,6 +76,7 @@ The Readdy UI sandbox is acceptable only if:
 - frontend does not compute final payable.
 - no adjustment write UI is introduced.
 - no production publish or deploy is performed.
+- Readdy does not claim Supabase Branch `ydubnjompnybshscosfd` validation.
 
 Completion package from Readdy must include:
 

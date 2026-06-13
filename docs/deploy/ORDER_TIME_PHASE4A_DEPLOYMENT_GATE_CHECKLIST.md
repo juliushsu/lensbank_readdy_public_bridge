@@ -11,6 +11,7 @@ Use this checklist before any Order Time UI moves beyond sandbox or preview. Pha
 - [ ] Production DB remains untouched.
 - [ ] Production Edge Functions remain untouched unless a separate production deploy gate is approved.
 - [ ] Readdy preview is used as UI sandbox only.
+- [ ] Readdy is not treated as the Supabase Branch runtime verifier.
 - [ ] Cloudflare Pages production/custom domain is not overwritten.
 - [ ] GitHub canonical branch/commit is recorded.
 - [ ] Preview URL is recorded.
@@ -44,7 +45,19 @@ Use this checklist before any Order Time UI moves beyond sandbox or preview. Pha
 - [ ] Type check/lint pass if available.
 - [ ] No service role key is present in frontend code.
 - [ ] No JWT, anon key, or Authorization header is logged.
-- [ ] Environment variables point to the intended preview/Staging target.
+- [ ] Readdy export does not hard-code production/main Supabase URLs beyond existing project configuration.
+- [ ] Codex confirms Cloudflare preview environment variables point to the intended Staging target before runtime smoke.
+
+## Codex Runtime Validation Gate
+
+These checks are not Readdy acceptance criteria. Codex performs them after importing the Readdy export into GitHub canonical source / Cloudflare preview:
+
+- [ ] Supabase Branch target is verified as `ydubnjompnybshscosfd`.
+- [ ] Cloudflare preview points to the verified Staging Supabase branch.
+- [ ] create-order old payload smoke passes against Staging.
+- [ ] create-order requested time payload smoke passes against Staging.
+- [ ] `admin-get-order-payable-summary` runtime smoke passes against Staging.
+- [ ] No runtime call falls back to main project `reczunexoejndosqzjal` during Staging validation.
 
 ## Checkout Regression Gate
 
@@ -56,7 +69,8 @@ Use this checklist before any Order Time UI moves beyond sandbox or preview. Pha
   - [ ] `requestedReturnTime`
 - [ ] Time format is `HH:mm`.
 - [ ] Old checkout payload without requested time remains backend-compatible.
-- [ ] New checkout payload with requested time succeeds on Staging.
+- [ ] Readdy export emits the expected requested time payload shape.
+- [ ] Codex runtime smoke verifies the new checkout payload succeeds on Staging.
 - [ ] Checkout time selection does not change:
   - [ ] `orders.start_date`
   - [ ] `orders.end_date`

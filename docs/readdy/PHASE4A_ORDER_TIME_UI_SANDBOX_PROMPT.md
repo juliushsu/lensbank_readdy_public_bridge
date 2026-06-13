@@ -22,6 +22,12 @@ Backend contract is already prepared in Staging:
 - `order_payable_summary`
 - Edge Function: `admin-get-order-payable-summary`
 
+Runtime validation note:
+
+- Readdy does not need to prove Supabase Branch `ydubnjompnybshscosfd` connectivity.
+- Do not claim Staging runtime validation from Readdy.
+- Codex will validate the Supabase Branch target and runtime behavior after reviewing the exported UI.
+
 Use the existing UI language and design system. Keep the app operational and compact. Do not create a marketing page.
 
 ## 1. Checkout UI
@@ -161,7 +167,7 @@ The exported UI should be handed back to Codex for:
 1. ZIP/source diff review.
 2. Merge into GitHub canonical branch.
 3. Frontend build.
-4. Staging preview deploy.
-5. Smoke verification.
+4. Supabase Branch / Cloudflare preview environment verification.
+5. Staging runtime smoke verification.
 
 No production publish is allowed from Readdy.

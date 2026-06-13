@@ -16,6 +16,7 @@ Hard boundary:
 - Do not modify DB.
 - Do not modify Supabase Edge Functions.
 - Do not modify rental fee, payable, Urent, or prepaid/stored-value calculations.
+- Do not claim Supabase Branch `ydubnjompnybshscosfd` runtime validation; Codex owns that validation.
 
 ## A. Frontend Checkout
 
@@ -50,7 +51,7 @@ requestedReturnTime: string; // HH:mm
 
 Backend compatibility:
 
-- Old payloads without these fields remain accepted by Staging backend.
+- Old payloads without these fields remain accepted by the backend contract.
 - New UI should require these fields for normal customer checkout.
 
 ### Field Names
@@ -343,9 +344,17 @@ Do not:
 - mutate fee adjustment rows.
 - mutate payable totals.
 
-## D. Staging Test Cases
+## D. Test Cases And Runtime Ownership
 
-Run these against Staging / Cloudflare preview only.
+Readdy should use these as UI acceptance cases only. Readdy is not responsible for proving that a preview is connected to Supabase Branch `ydubnjompnybshscosfd`.
+
+Codex Runtime Validation owns:
+
+- Supabase Branch target verification.
+- Staging create-order smoke.
+- Staging payable summary smoke.
+- Cloudflare preview environment verification.
+- Any proof that runtime traffic is using `ydubnjompnybshscosfd`.
 
 ### Checkout
 
@@ -356,9 +365,8 @@ Run these against Staging / Cloudflare preview only.
 2. New requested time payload:
    - Submit checkout with `requestedPickupTime: '09:00'`.
    - Submit checkout with `requestedReturnTime: '18:00'`.
-   - Expected: order creation succeeds in Staging.
-   - Expected: `orders.requested_pickup_time = '09:00'`.
-   - Expected: `orders.requested_return_time = '18:00'`.
+   - Readdy expected: payload shape is correct and UI does not send empty strings.
+   - Codex runtime expected: order creation succeeds against Staging and writes `orders.requested_pickup_time = '09:00'`, `orders.requested_return_time = '18:00'`.
 
 3. Invalid time format:
    - Try `9:00`, `25:99`, `abc`.

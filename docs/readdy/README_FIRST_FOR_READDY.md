@@ -11,6 +11,20 @@ Readdy must not publish production.
 
 Readdy output must be exported and reviewed by Codex before any merge, build, preview, or release.
 
+## Runtime Validation Boundary
+
+Readdy is not responsible for proving that a preview is connected to Supabase Branch `ydubnjompnybshscosfd`.
+
+Current LensBank/Readdy connection appears to target the main Supabase project (`reczunexoejndosqzjal`) and does not give Readdy a reliable way to switch, authenticate against, and prove the active Supabase Branch target. Readdy must not claim Staging runtime validation.
+
+Codex is responsible for:
+
+- Supabase Branch target verification.
+- Staging runtime validation.
+- Cloudflare preview environment verification.
+- create-order runtime smoke.
+- payable summary runtime smoke.
+
 ## What Readdy Can Do
 
 Readdy can propose UI-only changes for:
@@ -101,6 +115,8 @@ After UI sandbox work:
 3. Give the export to Codex.
 4. Codex reviews and ports approved changes into GitHub canonical source.
 5. Cloudflare Pages preview comes from GitHub canonical source, not Readdy.
+
+Codex will perform Staging runtime validation separately after importing the Readdy export.
 
 ## Read Next
 

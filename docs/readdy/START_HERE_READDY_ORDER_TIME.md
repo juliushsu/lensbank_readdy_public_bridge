@@ -17,6 +17,8 @@ The backend Staging foundation is already prepared for:
 
 This handoff is for Readdy UI Sandbox only. It is not a runtime merge, production deploy, database migration, or Cloudflare deploy.
 
+Readdy is not responsible for proving Supabase Branch `ydubnjompnybshscosfd` connectivity. Codex owns Supabase Branch target verification and Staging runtime validation after the Readdy export is reviewed.
+
 ## Required Reading Order
 
 Read these files in order before making UI changes:
@@ -67,3 +69,5 @@ When the UI sandbox is complete, provide:
 - known limitations or follow-up notes.
 
 Do not publish from Readdy. Export only.
+
+Do not report Supabase Branch `ydubnjompnybshscosfd` runtime validation as complete; Codex will run that gate.
