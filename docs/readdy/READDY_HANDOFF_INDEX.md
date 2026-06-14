@@ -15,6 +15,8 @@ Readdy must read:
 - [ORDER_TIME_FILE_INDEX.md](./ORDER_TIME_FILE_INDEX.md)
 - [ORDER_TIME_UI_IMPLEMENTATION_GUIDE.md](./ORDER_TIME_UI_IMPLEMENTATION_GUIDE.md)
 - [PHASE4A_ORDER_TIME_UI_SANDBOX_PROMPT.md](./PHASE4A_ORDER_TIME_UI_SANDBOX_PROMPT.md)
+- [VER1147_FAIL_REVIEW.md](./VER1147_FAIL_REVIEW.md)
+- [VER1148_REQUIRED_FIX.md](./VER1148_REQUIRED_FIX.md)
 - [ORDER_TIME_AND_FEE_ADJUSTMENT_CONTRACT.md](../contracts/ORDER_TIME_AND_FEE_ADJUSTMENT_CONTRACT.md)
 - [ORDER_PAYABLE_SUMMARY_CONTRACT.md](../contracts/ORDER_PAYABLE_SUMMARY_CONTRACT.md)
 - [ORDER_PAYABLE_READ_API_CONTRACT.md](../contracts/ORDER_PAYABLE_READ_API_CONTRACT.md)
@@ -69,6 +71,9 @@ The Readdy UI sandbox is acceptable only if:
 - `/account/checkout` includes requested pickup/return time UI.
 - new checkout payload includes `requestedPickupTime` and `requestedReturnTime`.
 - time format is `HH:mm`.
+- selected requested pickup/return times are cleared if they no longer exist in the latest slots after date/store changes.
+- submit is blocked if selected requested pickup/return times do not exist in the latest slots.
+- Ver1146 build fix is retained; do not regress to nonexistent `eslint-config-airbnb-typescript` versions or broken AutoImport config.
 - time selection does not change rental fee, rental days, deposit, Urent, prepaid, or stored-value behavior.
 - `/admin/orders/:id` displays requested and confirmed times without crashing on null values.
 - `/admin/orders/:id` includes read-only payable summary.

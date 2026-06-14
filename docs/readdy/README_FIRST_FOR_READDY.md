@@ -118,6 +118,17 @@ After UI sandbox work:
 
 Codex will perform Staging runtime validation separately after importing the Readdy export.
 
+## Ver1148 Required Fix
+
+Ver1147 failed Codex UX validation.
+
+Before producing Ver1148, Readdy must read:
+
+- [VER1147_FAIL_REVIEW.md](./VER1147_FAIL_REVIEW.md)
+- [VER1148_REQUIRED_FIX.md](./VER1148_REQUIRED_FIX.md)
+
+Ver1148 must fix requested-time state consistency and must retain the Ver1146 build fix.
+
 ## Read Next
 
 Read these in order:
@@ -125,3 +136,5 @@ Read these in order:
 1. [ORDER_TIME_FILE_INDEX.md](./ORDER_TIME_FILE_INDEX.md)
 2. [ORDER_TIME_UI_IMPLEMENTATION_GUIDE.md](./ORDER_TIME_UI_IMPLEMENTATION_GUIDE.md)
 3. [PHASE4A_ORDER_TIME_UI_SANDBOX_PROMPT.md](./PHASE4A_ORDER_TIME_UI_SANDBOX_PROMPT.md)
+4. [VER1147_FAIL_REVIEW.md](./VER1147_FAIL_REVIEW.md)
+5. [VER1148_REQUIRED_FIX.md](./VER1148_REQUIRED_FIX.md)
